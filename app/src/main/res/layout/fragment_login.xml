@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginFragment">
+    tools:context=".ui.auth.LoginFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,12 +26,9 @@
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
             android:inputType="textEmailAddress"
-            android:background="@drawable/bg_edit_text"
+            style="@style/EditTextTheme"
             android:hint="digite seu e-mail"
-            android:padding="10dp"
             android:layout_marginTop="4dp"
             />
 
@@ -45,21 +42,15 @@
 
         <EditText
             android:id="@+id/Senha"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/bg_edit_text"
+            style="@style/EditTextTheme"
             android:inputType="textPassword"
             android:hint="digite sua senha"
-            android:padding="10dp"
             android:layout_marginTop="4dp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/buttonLogin"
+            style="@style/ButtonTheme"
             android:text="Login"
-            android:textColor="@color/color_default"
-            android:background="@drawable/bg_btn"
-            app:backgroundTint="@null"
             android:layout_marginTop="16dp"/>
 
         <LinearLayout
@@ -94,6 +85,7 @@
             android:indeterminateTint="@color/white"
             android:layout_gravity="center"
             tools:visibility="visible"
+            android:visibility="invisible"
             />
     </LinearLayout>
 

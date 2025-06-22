@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.eduardo.task.R
-import com.eduardo.task.databinding.FragmentLoginBinding
+import com.eduardo.task.databinding.FragmentDoingBinding
 
+class DoingFragment : Fragment() {
 
-class LoginFragment : Fragment() {
-
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentDoingBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,11 +18,13 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater,container,false)
+        _binding = FragmentDoingBinding.inflate(inflater,container,false)
         return binding.root
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }

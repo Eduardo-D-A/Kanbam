@@ -4,18 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.RecoverAccountFragment"
+    tools:context=".ui.auth.RecoverAccountFragment"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="25dp">
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/icseta"
+            android:paddingTop="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Recuperar Conta"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
         <TextView
             android:id="@+id/textrecuperar"
@@ -38,22 +50,16 @@
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
+            style="@style/EditTextTheme"
             android:inputType="textEmailAddress"
-            android:background="@drawable/bg_edit_text"
             android:hint="digite seu e-mail"
-            android:padding="10dp"
             android:layout_marginTop="4dp"
             />
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/buttonEnviar"
+            style="@style/ButtonTheme"
             android:text="Enviar"
-            android:textColor="@color/color_default"
-            android:background="@drawable/bg_btn"
-            app:backgroundTint="@null"
             android:layout_marginTop="16dp"/>
 
         <ProgressBar

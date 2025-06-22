@@ -12,13 +12,15 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment_to_authentication"
-            app:destination="@id/authentication" />
+            app:destination="@id/authentication"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <navigation android:id="@+id/authentication"
         app:startDestination="@id/loginFragment">
         <fragment
             android:id="@+id/loginFragment"
-            android:name="com.eduardo.task.ui.LoginFragment"
+            android:name="com.eduardo.task.ui.auth.LoginFragment"
             android:label="fragment_login"
             tools:layout="@layout/fragment_login">
             <action
@@ -30,13 +32,38 @@
         </fragment>
         <fragment
             android:id="@+id/registerFragment"
-            android:name="com.eduardo.task.ui.RegisterFragment"
+            android:name="com.eduardo.task.ui.auth.RegisterFragment"
             android:label="fragment_register"
-            tools:layout="@layout/fragment_register" />
+            tools:layout="@layout/fragment_register" >
+            <action
+                android:id="@+id/action_registerFragment_to_loginFragment2"
+                app:destination="@id/loginFragment" />
+        </fragment>
         <fragment
             android:id="@+id/recoverAccountFragment"
-            android:name="com.eduardo.task.ui.RecoverAccountFragment"
+            android:name="com.eduardo.task.ui.auth.RecoverAccountFragment"
             android:label="fragment_recover_account"
-            tools:layout="@layout/fragment_recover_account" />
+            tools:layout="@layout/fragment_recover_account" >
+            <action
+                android:id="@+id/action_recoverAccountFragment_to_loginFragment"
+                app:destination="@id/loginFragment" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_homeFragment"
+            app:destination="@id/homeFragment" />
     </navigation>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.eduardo.task.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_formTaskFragment"
+            app:destination="@id/formTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formTaskFragment"
+        android:name="com.eduardo.task.ui.FormTaskFragment"
+        android:label="fragment_form_task"
+        tools:layout="@layout/fragment_form_task" />
 </navigation>
