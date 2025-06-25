@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.eduardo.task.R
 import com.eduardo.task.databinding.FragmentHomeBinding
 import com.eduardo.task.ui.adapter.ViewPagerAdapter
@@ -27,21 +28,22 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initTabs()
+        initListener()
     }
 
-    private fun initTabs() {
-        val pageAdapter = ViewPagerAdapter(requireActivity())
-        binding.viewPager.adapter = pageAdapter
-        pageAdapter.addFragment(TodoFragment(), R.string.status_task_todo)
-        pageAdapter.addFragment(TodoFragment(), R.string.status_task_doing)
-        pageAdapter.addFragment(TodoFragment(), R.string.status_task_done)
-
-        binding.viewPager.offscreenPageLimit= pageAdapter.itemCount
-
-        TabLayoutMediator(binding.tabs, binding.viewPager) { tab, position ->
-            tab.text = getString(pageAdapter.getTitle(position))
-        }.attach()
+    private fun initListener() {
+        binding.floatingActionButton2.setOnClickListener {
+            findNavController().navigate((R.id.action_homeFragment_to_formTaskFragment))
+        }
+        binding.imgHist.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_todoFragment)
+        }
+        binding.textviewHist.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_todoFragment)
+        }
+        binding.voltar.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     override fun onDestroyView() {

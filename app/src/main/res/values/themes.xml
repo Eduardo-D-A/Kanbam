@@ -28,8 +28,10 @@
         <item name="android:background">@drawable/bg_edit_text</item>
         <item name="android:padding">16dp</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="26">20dp</item>
     </style>
 
     <!-- pag 84 -->
@@ -37,8 +39,23 @@
         <item name="android:background">@drawable/bg_btn</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textColor">@color/color_default</item>
-        <item name="backgroundTint">@null</item>
+        <item name="backgroundTint">@color/color_default_var</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="26">20dp</item>
+    </style>
+
+    <style name="TextviewTitle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textColor">@color/color_default_var</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/color_secondary</item>
     </style>
 </resources>

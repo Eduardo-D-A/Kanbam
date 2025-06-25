@@ -30,8 +30,14 @@ class TodoFragment : Fragment() {
     }
 
     private fun initListener() {
-        binding.floatingActionButton.setOnClickListener {
-            findNavController().navigate((R.id.action_homeFragment_to_formTaskFragment))
+        binding.imgHome.setOnClickListener {
+            findNavController().navigate((R.id.action_global_homeFragment))
+        }
+        binding.textviewHome.setOnClickListener {
+            findNavController().navigate((R.id.action_global_homeFragment))
+        }
+        binding.voltar.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
     override fun onDestroyView() {

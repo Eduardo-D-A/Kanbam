@@ -2,6 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color_default">#03FCAD</color>
-    <color name="color_default_var">#A3FAC7</color>
+    <color name="color_default">#F0EEE9</color>
+    <color name="color_default_var">#3E77BD</color>
+    <color name="color_secondary">#9FC2DD</color>
+    <color name="color_secondary_var">#00609C</color>
+    <color name="button_add">#4E97D1</color>
+    <color name="splash">#0D5B8C</color>
+    <color name="footer_atual">#373232</color>
+    <color name="footer_outro">#7A8088</color>
 </resources>
