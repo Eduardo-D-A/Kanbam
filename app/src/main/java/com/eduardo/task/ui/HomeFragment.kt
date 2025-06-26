@@ -32,9 +32,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun initListener() {
-        binding.floatingActionButton2.setOnClickListener {
-            findNavController().navigate((R.id.action_homeFragment_to_formTaskFragment))
-        }
         binding.imgHist.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_todoFragment)
         }

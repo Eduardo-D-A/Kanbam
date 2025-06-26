@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolBar"
         style="@style/Toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
-        <ImageButton android:id="@+id/voltar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/voltar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -26,8 +27,8 @@
             android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/iclogo"
             android:layout_marginEnd="20dp"
+            android:src="@drawable/iclogo"
             app:layout_constraintBottom_toBottomOf="@id/title"
             app:layout_constraintEnd_toStartOf="@id/title"
             app:layout_constraintTop_toTopOf="@id/title" />
@@ -43,53 +44,60 @@
             app:layout_constraintTop_toBottomOf="@id/voltar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/footer"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#CAC4B6"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="#CAC4B6">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView android:id="@+id/imgHome"
+        <ImageView
+            android:id="@+id/imgHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ichome"
-            android:clickable="true"
             android:layout_marginStart="50dp"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            android:src="@drawable/ichome"
+            app:layout_constraintBottom_toTopOf="@id/textviewHome"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/textviewHome"
-            android:layout_marginTop="23dp"
             app:tint="@color/footer_outro" />
-        <TextView android:id="@+id/textviewHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Início"
-            android:clickable="true"
-            android:textColor="@color/footer_outro"
-            app:layout_constraintStart_toStartOf="@id/imgHome"
-            app:layout_constraintEnd_toEndOf="@id/imgHome"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="23dp"/>
 
-        <ImageView android:id="@+id/imgHist"
+        <TextView
+            android:id="@+id/textviewHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ichist"
+            android:layout_marginBottom="23dp"
+            android:clickable="true"
+            android:text="Início"
+            android:textColor="@color/footer_outro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgHome"
+            app:layout_constraintStart_toStartOf="@id/imgHome" />
+
+        <ImageView
+            android:id="@+id/imgHist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ichist"
             app:layout_constraintBottom_toTopOf="@id/textviewHist"
+            app:layout_constraintEnd_toEndOf="parent"
             app:tint="@color/footer_atual" />
-        <TextView android:id="@+id/textviewHist"
+
+        <TextView
+            android:id="@+id/textviewHist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
             android:text="Histórico"
             android:textColor="@color/footer_atual"
-            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/imgHist"
-            app:layout_constraintStart_toStartOf="@id/imgHist"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toStartOf="@id/imgHist" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
