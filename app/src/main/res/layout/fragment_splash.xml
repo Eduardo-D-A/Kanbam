@@ -11,10 +11,15 @@
 
     <ImageView
         android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="62dp"
+        android:src="@drawable/iclogo"
+        />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/iclogo"
-        android:scaleType="centerCrop"
-        />
+        android:text="hydrocontrol"
+        android:textSize="24sp"
+        android:textColor="#26435E"/>
 
 </LinearLayout>
