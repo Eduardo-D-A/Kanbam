@@ -45,7 +45,7 @@
             android:label="fragment_recover_account"
             tools:layout="@layout/fragment_recover_account" >
             <action
-                android:id="@+id/action_recoverAccountFragment_to_loginFragment"
+                android:id="@+id/action_recoverAccountFragment_to_loginFragment3"
                 app:destination="@id/loginFragment" />
         </fragment>
         <action
@@ -58,19 +58,15 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_formTaskFragment"
-            app:destination="@id/formTaskFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_todoFragment"
             app:destination="@id/todoFragment" />
     </fragment>
     <fragment
-        android:id="@+id/formTaskFragment"
-        android:name="com.eduardo.task.ui.FormTaskFragment"
-        android:label="fragment_form_task"
-        tools:layout="@layout/fragment_form_task" />
-    <fragment
         android:id="@+id/todoFragment"
         android:name="com.eduardo.task.ui.TodoFragment"
-        android:label="TodoFragment" />
+        android:label="TodoFragment" >
+        <action
+            android:id="@+id/action_todoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

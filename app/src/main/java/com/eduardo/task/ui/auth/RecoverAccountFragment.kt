@@ -39,6 +39,9 @@ class RecoverAccountFragment : Fragment() {
         binding.buttonEnviar.setOnClickListener {
             validateDate()
         }
+        binding.Entrar.setOnClickListener {
+            findNavController().navigate(R.id.action_recoverAccountFragment_to_loginFragment3)
+        }
     }
 
     private fun validateDate() {
@@ -46,6 +49,7 @@ class RecoverAccountFragment : Fragment() {
 
         if (email.isNotBlank()){
             Toast.makeText(requireContext(), "Tudo Ok!", Toast.LENGTH_SHORT).show()
+            findNavController().navigate((R.id.action_recoverAccountFragment_to_loginFragment3))
         }
         else{
             showBottomSheet(message = getString(R.string.email_empty))

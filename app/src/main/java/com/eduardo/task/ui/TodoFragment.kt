@@ -31,10 +31,10 @@ class TodoFragment : Fragment() {
 
     private fun initListener() {
         binding.imgHome.setOnClickListener {
-            findNavController().navigate((R.id.action_global_homeFragment))
+            findNavController().navigate((R.id.action_todoFragment_to_homeFragment))
         }
         binding.textviewHome.setOnClickListener {
-            findNavController().navigate((R.id.action_global_homeFragment))
+            findNavController().navigate((R.id.action_todoFragment_to_homeFragment))
         }
         binding.voltar.setOnClickListener {
             findNavController().popBackStack()

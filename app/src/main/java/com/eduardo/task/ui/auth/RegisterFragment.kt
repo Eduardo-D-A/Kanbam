@@ -39,6 +39,9 @@ class RegisterFragment : Fragment() {
         binding.buttonRegister.setOnClickListener {
             validateDate()
         }
+        binding.Entrar.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment2)
+        }
     }
 
     private fun validateDate() {
