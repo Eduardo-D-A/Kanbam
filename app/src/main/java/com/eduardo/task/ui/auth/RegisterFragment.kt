@@ -46,12 +46,18 @@ class RegisterFragment : Fragment() {
 
     private fun validateDate() {
         val email = binding.email.text.toString().trim()
-        val senha = binding.Senha.text.toString().trim()
+        val senha = binding.Senha.text.toString()
+        val confir = binding.confirmaSenha.text.toString()
 
         if (email.isNotBlank()){
             if (senha.isNotBlank()) {
-                Toast.makeText(requireContext(), "Tudo Ok!", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_registerFragment_to_loginFragment2)
+                if (senha.contentEquals(confir)){
+                    Toast.makeText(requireContext(), "Conta criada!\nConfirme seu email", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_registerFragment_to_loginFragment2)
+                }
+                else {
+                    showBottomSheet(message = getString(R.string.password_differ_register_fragment))
+                }
             }
             else {
                 showBottomSheet(message = getString(R.string.password_empty_register_fragment))

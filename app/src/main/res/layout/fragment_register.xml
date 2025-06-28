@@ -76,15 +76,25 @@
         app:layout_constraintTop_toBottomOf="@id/email"
         app:layout_constraintStart_toStartOf="@id/email"
         app:layout_constraintEnd_toEndOf="@id/email"/>
+    <EditText
+        android:id="@+id/confirmaSenha"
+        style="@style/EditTextTheme"
+        android:inputType="textPassword"
+        android:hint="confirme sua senhaApp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/Senha"
+        app:layout_constraintStart_toStartOf="@id/Senha"
+        app:layout_constraintEnd_toEndOf="@id/Senha"/>
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonRegister"
         style="@style/ButtonTheme"
         android:text="Enviar"
         android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/Senha"
-        app:layout_constraintStart_toStartOf="@id/Senha"
-        app:layout_constraintEnd_toEndOf="@id/Senha"/>
+        app:layout_constraintTop_toBottomOf="@id/confirmaSenha"
+        app:layout_constraintStart_toStartOf="@id/confirmaSenha"
+        app:layout_constraintEnd_toEndOf="@id/confirmaSenha"/>
 
     <ProgressBar
         android:id="@+id/progress"

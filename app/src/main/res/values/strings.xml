@@ -13,6 +13,7 @@
 
     <string name="email_empty_register_fragment">Preencha um e-mail válido</string>
     <string name="password_empty_register_fragment">Preencha uma senha</string>
+    <string name="password_differ_register_fragment">As senhas digitadas diferem</string>
 
     <string name="description_empty_form_task_fragment">Preencha uma descrição!</string>
 </resources>
