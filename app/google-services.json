@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915344085642",
+    "project_id": "hydrocontrol-126eb",
+    "storage_bucket": "hydrocontrol-126eb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915344085642:android:a80f96e5b6bc9bf2121373",
+        "android_client_info": {
+          "package_name": "com.eduardo.task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBml4-gt5C0wguofWRLa972H58qC5F7tpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,6 +11,7 @@ import com.eduardo.task.R
 import com.eduardo.task.databinding.FragmentRegisterBinding
 import com.eduardo.task.util.initToolbar
 import com.eduardo.task.util.showBottomSheet
+import com.google.firebase.auth.FirebaseAuth
 
 
 class RegisterFragment : Fragment() {
@@ -53,6 +54,7 @@ class RegisterFragment : Fragment() {
             if (senha.isNotBlank()) {
                 if (senha.contentEquals(confir)){
                     Toast.makeText(requireContext(), "Conta criada!\nConfirme seu email", Toast.LENGTH_SHORT).show()
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.email.text.toString().trim(), binding.Senha.text.toString())
                     findNavController().navigate(R.id.action_registerFragment_to_loginFragment2)
                 }
                 else {

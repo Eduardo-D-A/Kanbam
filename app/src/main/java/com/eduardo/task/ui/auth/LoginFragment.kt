@@ -10,6 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.eduardo.task.R
 import com.eduardo.task.databinding.FragmentLoginBinding
 import com.eduardo.task.util.showBottomSheet
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 
 
 class LoginFragment : Fragment() {
@@ -54,17 +57,34 @@ class LoginFragment : Fragment() {
     private fun validateDate() {
         val email = binding.email.text.toString().trim()
         val senha = binding.Senha.text.toString().trim()
+        val confirma = FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha)
 
-        if (email.isNotBlank()){
-            if (senha.isNotBlank()) {
-                findNavController().navigate(R.id.action_global_homeFragment)
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // Sucesso! O usuário está logado.
+                    val user = FirebaseAuth.getInstance().currentUser
+                    // Você pode redirecionar o usuário, mostrar uma mensagem de boas-vindas, etc.
+                    println("Login bem-sucedido para: ${user?.email}")
+                    findNavController().navigate(R.id.action_global_homeFragment)
+                } else {
+                    // Falha no login.
+                    // Aqui você trata os erros específicos.
+                    when (task.exception) {
+                        is FirebaseAuthInvalidUserException -> {
+                            println("Erro: Usuário não encontrado ou desativado.")
+                            // Mostrar mensagem ao usuário: "E-mail não registrado ou conta desativada."
+                        }
+                        is FirebaseAuthInvalidCredentialsException -> {
+                            println("Erro: Credenciais inválidas.")
+                            // Mostrar mensagem ao usuário: "Senha incorreta ou e-mail/senha inválidos."
+                        }
+                        else -> {
+                            // Outros tipos de erro ou erro genérico.
+                            println("Erro desconhecido durante o login: ${task.exception?.message}")
+                            // Mostrar mensagem genérica de erro.
+                        }
+                    }
+                }
             }
-            else {
-                showBottomSheet(message = getString(R.string.password_empty))
-            }
-        }
-        else{
-            showBottomSheet(message = getString(R.string.email_empty))
-        }
     }
 }
